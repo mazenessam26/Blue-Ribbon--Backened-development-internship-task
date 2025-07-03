@@ -1,0 +1,72 @@
+generator client{
+    provider =  "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Member {
+  id                String   @id @default(uuid()) @db.Uuid
+  firstName         String   @map("first_name") @db.VarChar(255)
+  lastName          String   @map("last_name") @db.VarChar(255)
+  gender            Gender
+  birthdate         DateTime @db.Date
+  subscriptionDate  DateTime @default(now()) @map("subscription_date")
+  familyHeadId      String?  @map("family_head_id") @db.Uuid
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  familyHead        Member?              @relation("FamilyMembers", fields: [familyHeadId], references: [id])
+  familyMembers     Member[]             @relation("FamilyMembers")
+  sportSubscriptions SportSubscription[]
+
+  @@map("members")
+}
+
+model Sport {
+  id               String   @id @default(uuid()) @db.Uuid
+  name             String   @unique @db.VarChar(255)
+  subscriptionPrice Decimal  @map("subscription_price") @db.Decimal(10, 2)
+  allowedGender    AllowedGender @map("allowed_gender")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  sportSubscriptions SportSubscription[]
+
+  @@map("sports")
+}
+
+model SportSubscription {
+  id               String           @id @default(uuid()) @db.Uuid
+  memberId         String           @map("member_id") @db.Uuid
+  sportId          String           @map("sport_id") @db.Uuid
+  subscriptionType SubscriptionType @map("subscription_type")
+  subscribedAt     DateTime         @default(now()) @map("subscribed_at")
+
+  // Relations
+  member Member @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  sport  Sport  @relation(fields: [sportId], references: [id], onDelete: Cascade)
+
+  @@unique([memberId, sportId])
+  @@map("sport_subscriptions")
+}
+
+enum Gender {
+  male
+  female
+}
+
+enum AllowedGender {
+  male
+  female
+  mix
+}
+
+enum SubscriptionType {
+  group
+  private
+}
