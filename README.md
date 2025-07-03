@@ -73,7 +73,7 @@ npm run test
 ##  Database Schema
 
 
-![Screenshot 2025-07-03 200341](https://github.com/user-attachments/assets/34888c4e-6b79-418c-800d-a6302b78df8c)
+![Alt text](https://github.com/user-attachments/assets/34888c4e-6b79-418c-800d-a6302b78df8c)
 
 
 
