@@ -9,7 +9,7 @@ A robust NestJS-based REST API for managing a sporting club with comprehensive m
 
 ### 1. Clone the repository then navigate
 
-cd sporting-club-backend
+cd blue-ribbon-backend
 
 
 # 2. Install dependencies
