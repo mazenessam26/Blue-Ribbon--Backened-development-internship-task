@@ -34,7 +34,7 @@ npx prisma db push --schema=src/prisma/schema.prisma
 ## Testing
 
 ### Run Tests
-```bash
+
 # Unit tests
 npm run test
 
