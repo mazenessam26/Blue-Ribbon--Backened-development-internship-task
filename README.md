@@ -58,7 +58,6 @@ npm run test
 - **Database**: PostgreSQL
 - **ORM**: Prisma
 - **Validation**: class-validator, class-transformer
-- **Caching**: cache-manager with Redis support
 - **Testing**: Jest, Supertest
 - **Language**: TypeScript
 
@@ -74,7 +73,7 @@ npm run test
 
 
 
-## 📁 Project Structure
+##  Project Structure
 
 src/
 ├── app.module.ts
