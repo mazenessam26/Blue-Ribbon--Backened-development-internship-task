@@ -8,7 +8,7 @@ import {
   Delete,
   UseInterceptors,
 } from '@nestjs/common';
-import { CacheInterceptor } from '@nestjs/cache-manager';
+//import { CacheInterceptor } from '@nestjs/cache-manager';
 import { SportsService } from './service';
 import { CreateSportDto } from './dto/create-sport.dto';
 import { UpdateSportDto } from './dto/update-sport.dto';
@@ -23,7 +23,7 @@ export class SportsController {
   }
 
   @Get()
-  @UseInterceptors(CacheInterceptor) // Cache for mobile app performance
+  //@UseInterceptors(CacheInterceptor) // Cache for mobile app performance
   findAll() {
     return this.sportsService.findAll();
   }
