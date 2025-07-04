@@ -27,9 +27,8 @@ npx prisma generate --schema=src/prisma/schema.prisma
 # Push schema to database
 npx prisma db push --schema=src/prisma/schema.prisma
 
-##  Known Issues
-
-- you cant do npm start due to problem in cashe manager dependency version conflict (go to supabase instead to cheack the db)
+# start the app
+npm run start
 
 ## Testing
 
@@ -51,7 +50,6 @@ npm run test
 - **Subscription System**: Manage member subscriptions to various sports
 - **Family Relationships**: Support for family hierarchies with family heads
 - **Gender Compatibility**: Automatic validation of member eligibility for sports
-- **Performance Optimized**: Caching implementation for high-traffic endpoints
 - **Type Safety**: Full TypeScript implementation with Prisma ORM
 - **Comprehensive Testing**: Unit tests and E2E tests included
 
@@ -102,7 +100,6 @@ src/
 │   └── subscriptions.module.ts
 └── prisma/
     ├── schema.prisma
-    └── seed.ts
     └── prisma.services
 
 ##  API Examples
@@ -125,7 +122,6 @@ values
 
 ##  Performance Features:
 
-- **Caching**: Sports endpoint cached for 5 minutes using cache-manager
 - **Database Optimization**: Efficient queries with Prisma ORM
 - **UUID Primary Keys**: Enhanced security and scalability
 - **Connection Pooling**: Automatic connection management
@@ -180,7 +176,6 @@ values
 
 ## Performance Optimizations
 
-1. **Caching**: Sports endpoint is cached for 5 minutes to handle thousands of requests efficiently.
 
 2. **Database Indexing**: Unique constraints automatically create indexes for better query performance.
 
@@ -188,4 +183,5 @@ values
 
 4. **Connection Pooling**: Prisma handles connection pooling automatically.
 
-
+# Final Note
+i was going to implement cashe system to deal with the high traffic. but there were a problem in it's node-modules which prevented the app from running. so i had to remove this feature.
