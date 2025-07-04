@@ -1,8 +1,8 @@
 {
   "name": "blue-ribbon-backend",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Requested task from blackribbon for backend development internship role",
+  "author": "Mazen Essam",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
