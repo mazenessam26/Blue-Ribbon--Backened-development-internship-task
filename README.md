@@ -51,7 +51,7 @@ npm run test
 - **Family Relationships**: Support for family hierarchies with family heads
 - **Gender Compatibility**: Automatic validation of member eligibility for sports
 - **Type Safety**: Full TypeScript implementation with Prisma ORM
-- **Comprehensive Testing**: Unit tests and E2E tests included
+- **Comprehensive Testing**: Unit tests included
 
 ##  Tech Stack
 
@@ -166,13 +166,11 @@ values
 
 6. **Price Storage**: Used DECIMAL(10,2) for precise monetary calculations.
 
-7. **Caching Strategy**: Implemented simple in-memory caching for the sports endpoint since it's accessed frequently by the mobile app.
+7. **Error Handling**: Used appropriate HTTP status codes and detailed error messages for better API usability.
 
-8. **Error Handling**: Used appropriate HTTP status codes and detailed error messages for better API usability.
+8. **Validation**: Implemented comprehensive input validation using class-validator decorators.
 
-9. **Validation**: Implemented comprehensive input validation using class-validator decorators.
-
-10. **Database Timestamps**: Added created_at and updated_at timestamps for audit trails.
+9. **Database Timestamps**: Added created_at and updated_at timestamps for audit trails.
 
 ## Performance Optimizations
 
